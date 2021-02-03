@@ -1,0 +1,30 @@
+.dropdown .trigger {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.dropdown .trigger::after {
+  content: ">";
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  /* Default rotate: ">" to "v" */
+  transform: rotate(90deg) scale(0.5, 1);
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+/* When dropdown has  active-class, rotate:
+">" to "^" */
+.dropdown .trigger.active::after {
+  transform: rotate(-90deg) scale(0.5, 1);
+}
+
+.dropdown .content {
+  display: none;
+}
+
+.dropdown .content.active {
+  display: block;
+}
